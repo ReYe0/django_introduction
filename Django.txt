@@ -4,7 +4,8 @@
 
 # 迁移可以迁移到mysql等其他数据库中，包括建表
 生成迁移文件 python manage.py makemigrations
-运行迁移文件，把内容同步到数据库中去 python manage.py migrate
+运行迁移文件，把表结构同步到数据库（如mysql）中去 python manage.py migrate
+# 迁移数据
 python manage.py dumpdata > data.json
 python manage.py loaddata data.json
 
