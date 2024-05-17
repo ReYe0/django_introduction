@@ -1,0 +1,14 @@
+创建项目 django-admin startproject django_introduction
+运行项目 python manage.py runserver
+创建应用 python manage.py startapp blog
+
+# 迁移可以迁移到mysql等其他数据库中，包括建表
+生成迁移文件 python manage.py makemigrations
+运行迁移文件，把内容同步到数据库中去 python manage.py migrate
+python manage.py dumpdata > data.json
+python manage.py loaddata data.json
+
+Django shell 进入面向过程编程，可以查看数据库 python manage.py shell
+
+
+创建Django Admin模块超级管理呀 python manage.py createsuperuser
