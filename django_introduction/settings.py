@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     # myapp
     'blog.apps.BlogConfig',
+    'polls.apps.PollsConfig'
 ]
 
 MIDDLEWARE = [
@@ -96,23 +97,23 @@ WSGI_APPLICATION = 'django_introduction.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'csp_data',
-        'HOST': '10.100.50.67',
-        'PORT': '3306',
-        'USER': 'root',
-        'PASSWORD': 'test',
-    },
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'csp_data',
+#         'HOST': '10.100.50.67',
+#         'PORT': '3306',
+#         'USER': 'root',
+#         'PASSWORD': 'test',
+#     },
+# }
 
 
 # Password validation
