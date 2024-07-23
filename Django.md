@@ -59,10 +59,10 @@ RUN apt-get update \
     && apt-get install -y gcc 
 
 # 安装 Python 依赖
-RUN pip install --no-cache-dir -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/
+RUN pip install --no-cache-dir -r packet_look -i https://mirrors.aliyun.com/pypi/simple/
 
 # 暴露端口
-EXPOSE 800
+EXPOSE 8000
 
 # 运行 Django 开发服务器
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
@@ -88,16 +88,16 @@ WORKDIR /app
 COPY package*.json ./
 
 # 安装项目依赖
-RUN npm install
+RUN npm config set registry https://registry.npmmirror.com/ && npm install
 
-# 复制所有文件到工作目录
+# 复制所有源代码到工作目录
 COPY . .
 
 # 构建 Vue 项目
 RUN npm run build
 
 # 安装 Express
-RUN npm install express
+RUN npm config set registry https://registry.npmmirror.com/ && npm install express
 
 # 暴露端口
 EXPOSE 8080
